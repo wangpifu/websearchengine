@@ -60,7 +60,7 @@ class GetPageThread(threading.Thread):
 
             for link in links:
                 link = link['href']
-                link = urljoin('http://69.46.75.21/thread-htm-fid-11.html', link)
+                link = urljoin('***', link)
                 print link
                 if link not in self.seen:
                     self.seen.append(link)
@@ -131,12 +131,12 @@ def login():
     postdata = urllib.urlencode({
                                     'jumpurl' : '/index.php',
                                     'step'    :  2,
-                                    'pwuser'  : 'sexyzhouxc',
-                                    'pwpwd'   : 'zhouxc2007',
+                                    'pwuser'  : '***',
+                                    'pwpwd'   : '***',
                                     'lgt'     :  0
                                 })
     req = urllib2.Request(
-                            url = 'http://69.46.75.21/login.php',
+                            url = '***',
                             data = postdata,
                          )
 
@@ -146,13 +146,9 @@ def login():
 
 
 def main():
-    #url = "http://igirls.tuita.com/"
-    #url = "http://jaychiu.tuita.com/"
-    #url = "http://jonny.tuita.com/"
-    #url = "http://natural.tuita.com/"
-    #url = 'http://www.9city.tv/forum-153-1.html'
+
     login()
-    url = 'http://69.46.75.21/thread-htm-fid-11.html'
+    url = '***'
     spider = Crawler(url)
     spider.walk()
 
